@@ -83,9 +83,9 @@ export function goToStage(stage) {
     updateDescription(stage);
 
     switch (stage) {
-        case 0: stageComplex();    break;
+        case 0: stageComplex(); break;
         case 1: stageDissolution(); break;
-        case 2: stageHydration();  break;
+        case 2: stageHydration(); break;
         case 3: stageHydrolysis(); break;
     }
 }
@@ -125,7 +125,8 @@ function stageComplex() {
 
     // Camera back to default
     tl.to(_camera.position, { x: 4, y: 3, z: 5, duration: 1.2, ease: 'power2.inOut' }, 0);
-    tl.to(_controls.target, { x: 0, y: 0, z: 0, duration: 1.2, ease: 'power2.inOut',
+    tl.to(_controls.target, {
+        x: 0, y: 0, z: 0, duration: 1.2, ease: 'power2.inOut',
         onUpdate: () => _controls.update(),
     }, 0);
 }

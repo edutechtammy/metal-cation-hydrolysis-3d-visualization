@@ -170,6 +170,90 @@ In reality, highly charged metal cations act as **Lewis acids** — they accept 
 
 ---
 
+## 📋 Canvas LMS — Student Instructions
+
+> **Copy the text below into your Canvas course page directly above the `<iframe>` embed of the interactive visualization.**
+
+---
+
+### ✏️ Begin copying here ↓
+
+---
+
+#### 🔬 Interactive Activity: Why Does Al³⁺ Make Water Acidic?
+
+**Learning Objective:** Explain why dissolving a highly charged metal cation such as Al³⁺ in water produces an acidic solution — even though no "acid" was added.
+
+**Before You Begin**
+- This is a 3D interactive model. Use your **mouse** (or **finger** on mobile) to rotate, zoom, and explore the molecule.
+- **Click on any atom** to see its identity, role, and partial charge.
+- Work through the four stages **in order** using the numbered buttons at the top.
+
+---
+
+**Stage 0 — The Complex (Observe)**
+
+Click **"0 Complex"**. You are looking at the octahedral aqua complex [Al(H₂O)₆]³⁺.
+
+- Rotate the model. How many water molecules surround the Al³⁺ ion?
+- Click on the central silver atom, then click on a red atom. What are their roles?
+- Notice the **dashed lines** (coordination bonds) vs. the **solid lines** (covalent O–H bonds). Why are they drawn differently?
+
+**Stage 1 — Dissolution (Visualise)**
+
+Click **"1 Dissolution"**. Watch the lattice break apart.
+
+- In your own words, what is happening at the particle level when an ionic solid dissolves?
+
+**Stage 2 — Hydration (Analyse)**
+
+Click **"2 Hydration"**. Watch the water molecules move toward Al³⁺.
+
+- Which end of the water molecule faces the Al³⁺ ion — the oxygen or the hydrogens? Why?
+- Relate this to the concept of **dipole orientation**. What does the δ− label on oxygen tell you?
+
+**Stage 3 — Hydrolysis (The Key Insight)**
+
+Click **"3 Hydrolysis"**. Watch closely — this is the critical step.
+
+- Observe the **orange-red glow** that builds on one of the oxygen atoms. What does this glow represent?
+- What happens to one of the hydrogen atoms? Where does it go?
+- Write the balanced equation for what you just observed.
+- **Discussion question:** Al³⁺ has a charge of +3 and an ionic radius of only 0.535 Å. How does its *charge density* (charge ÷ radius) explain why it can pull electron density away from the O–H bond?
+
+---
+
+**Reflection Prompt**
+
+A common misconception is: *"Metal ions are not acids — only substances like HCl are acids."*
+
+Using what you observed in Stage 3, write 2–3 sentences explaining why this statement is incorrect. Your answer should include the terms: **Lewis acid**, **polarisation**, and **charge density**.
+
+---
+
+**The overall reaction you visualised:**
+
+[Al(H₂O)₆]³⁺ + H₂O ⇌ [Al(H₂O)₅OH]²⁺ + H₃O⁺
+
+---
+
+### ✏️ End copying here ↑
+
+> **Canvas embed code** — paste this `<iframe>` immediately after the instructions above:
+> ```html
+> <iframe
+>   src="https://edutechtammy.github.io/metal-cation-hydrolysis-3d-visualization/"
+>   width="100%"
+>   height="700"
+>   style="border: 1px solid #ccc; border-radius: 8px;"
+>   allow="accelerometer; gyroscope"
+>   loading="lazy"
+>   title="Al³⁺ Hydrolysis 3D Interactive">
+> </iframe>
+> ```
+
+---
+
 ## 📜 License
 
 [MIT](LICENSE)
