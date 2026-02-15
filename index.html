@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al³⁺ Hydrolysis — 3D Visualization</title>
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+
+  <!-- ── Three.js Canvas ── -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- ── UI Overlay ── -->
+  <div id="ui-overlay">
+
+    <!-- Title Bar -->
+    <header id="title-bar">
+      <h1>[Al(H₂O)₆]³⁺ Hydrolysis</h1>
+      <p class="subtitle">Interactive 3D Visualization</p>
+    </header>
+
+    <!-- Stage Controls (Progressive Disclosure) -->
+    <nav id="stage-controls">
+      <button class="stage-btn active" data-stage="0">
+        <span class="stage-num">0</span>
+        <span class="stage-label">Complex</span>
+      </button>
+      <button class="stage-btn" data-stage="1">
+        <span class="stage-num">1</span>
+        <span class="stage-label">Dissolution</span>
+      </button>
+      <button class="stage-btn" data-stage="2">
+        <span class="stage-num">2</span>
+        <span class="stage-label">Hydration</span>
+      </button>
+      <button class="stage-btn" data-stage="3">
+        <span class="stage-num">3</span>
+        <span class="stage-label">Hydrolysis</span>
+      </button>
+    </nav>
+
+    <!-- Atom Info Panel (shown on Raycaster click) -->
+    <aside id="info-panel" class="hidden">
+      <button id="info-close" aria-label="Close info panel">✕</button>
+      <h2 id="info-title">—</h2>
+      <dl>
+        <dt>Element</dt>  <dd id="info-element">—</dd>
+        <dt>Role</dt>     <dd id="info-role">—</dd>
+        <dt>Charge</dt>   <dd id="info-charge">—</dd>
+      </dl>
+    </aside>
+
+    <!-- Equation Display -->
+    <footer id="equation-bar">
+      <p>[Al(H₂O)₆]³⁺ + H₂O ⇌ [Al(H₂O)₅OH]²⁺ + H₃O⁺</p>
+    </footer>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

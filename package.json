@@ -1,0 +1,27 @@
+{
+    "name": "metal-cation-hydrolysis-3d",
+    "version": "1.0.0",
+    "description": "Interactive 3D visualization of Al³⁺ hydrolysis — bridging the 'reality gap' in chemistry education",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "three": "^0.170.0",
+        "gsap": "^3.12.7"
+    },
+    "devDependencies": {
+        "vite": "^6.0.0"
+    },
+    "keywords": [
+        "chemistry",
+        "three.js",
+        "hydrolysis",
+        "aluminum",
+        "3d-visualization",
+        "pedagogy"
+    ],
+    "license": "MIT"
+}
