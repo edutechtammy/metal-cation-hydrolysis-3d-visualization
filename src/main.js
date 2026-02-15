@@ -10,6 +10,8 @@ import { buildComplex } from './atoms.js';
 import { buildBonds } from './bonds.js';
 import { initInteraction } from './interaction.js';
 import { PALETTE } from './materials.js';
+import { initLabels, attachLabels, getLabelRenderer } from './labels.js';
+import { initStages, goToStage } from './stages.js';
 
 // ═══════════════════════════════════════════════════════════
 //  1.  RENDERER
@@ -93,12 +95,23 @@ const bondsGroup = buildBonds(al, waters);
 scene.add(bondsGroup);
 
 // ═══════════════════════════════════════════════════════════
-//  7.  RAYCASTER INTERACTION
+//  7.  LABELS (CSS2DRenderer)
+// ═══════════════════════════════════════════════════════════
+const labelRenderer = initLabels();
+attachLabels(complex);
+
+// ═══════════════════════════════════════════════════════════
+//  8.  STAGE ANIMATION SYSTEM (GSAP)
+// ═══════════════════════════════════════════════════════════
+initStages(scene, camera, controls, complex, al, waters, bondsGroup);
+
+// ═══════════════════════════════════════════════════════════
+//  9.  RAYCASTER INTERACTION
 // ═══════════════════════════════════════════════════════════
 initInteraction(camera, scene, canvas);
 
 // ═══════════════════════════════════════════════════════════
-//  8.  STAGE BUTTONS (wired for future GSAP animations)
+//  10. STAGE BUTTONS
 // ═══════════════════════════════════════════════════════════
 let currentStage = 0;
 
@@ -113,21 +126,13 @@ document.querySelectorAll('.stage-btn').forEach((btn) => {
         document.querySelectorAll('.stage-btn').forEach((b) => b.classList.remove('active'));
         btn.classList.add('active');
 
-        // TODO: Stage transition animations (GSAP)
-        // ──────────────────────────────────────────
-        // switch (stage) {
-        //   case 0: showComplex();    break;
-        //   case 1: dissolution();    break;
-        //   case 2: hydration();      break;
-        //   case 3: hydrolysis();     break;
-        // }
-
-        console.log(`→ Stage ${stage}: ${btn.querySelector('.stage-label').textContent}`);
+        // Trigger GSAP stage animation
+        goToStage(stage);
     });
 });
 
 // ═══════════════════════════════════════════════════════════
-//  9.  HELPERS (optional visual aids)
+//  11. HELPERS (optional visual aids)
 // ═══════════════════════════════════════════════════════════
 
 // Axes helper — useful during development, disable for production
@@ -135,21 +140,23 @@ document.querySelectorAll('.stage-btn').forEach((btn) => {
 // scene.add(axes);
 
 // ═══════════════════════════════════════════════════════════
-//  10. RENDER LOOP
+//  12. RENDER LOOP
 // ═══════════════════════════════════════════════════════════
 function animate() {
     controls.update();             // required when damping is enabled
     renderer.render(scene, camera);
+    labelRenderer.render(scene, camera);  // CSS2D labels
     requestAnimationFrame(animate);
 }
 
 animate();
 
 // ═══════════════════════════════════════════════════════════
-//  11. RESIZE HANDLER
+//  13. RESIZE HANDLER
 // ═══════════════════════════════════════════════════════════
 window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    labelRenderer.setSize(window.innerWidth, window.innerHeight);
 });

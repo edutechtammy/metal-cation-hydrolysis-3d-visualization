@@ -174,3 +174,65 @@ body {
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
     letter-spacing: 0.04em;
 }
+
+/* ── Stage Description Banner ──────────────────────────────── */
+#stage-desc-wrapper {
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+}
+
+#stage-desc {
+    max-width: 600px;
+    text-align: center;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    background: rgba(12, 16, 28, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    opacity: 0.85;
+    transition: opacity 0.4s;
+}
+
+#stage-desc.hidden {
+    opacity: 0;
+}
+
+/* ── Atom Labels (CSS2DRenderer) ───────────────────────────── */
+.atom-label {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+    line-height: 1.3;
+}
+
+.label-al {
+    color: #d0d0d0;
+    border: 1px solid rgba(192, 192, 192, 0.4);
+}
+
+.label-o {
+    color: #ff7070;
+    border: 1px solid rgba(226, 60, 60, 0.4);
+}
+
+.label-h {
+    color: #cccccc;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.label-hydronium {
+    color: #66ddff;
+    border: 1px solid rgba(74, 200, 255, 0.5);
+    font-size: 13px;
+    padding: 3px 8px;
+}
